@@ -3,8 +3,11 @@ import { Component } from '@angular/core';
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 
+import { Post } from "./models/post.model";
+import * as PostActions from "./actions/post.actions";
+
 interface AppState {
-  message: string;
+  post: Post;
 }
 
 @Component({
