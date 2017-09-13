@@ -1,5 +1,5 @@
 import * as PostActions from '../actions/post.actions';
-import { Post } from "../models/post.model";
+import { Post } from '../models/post.model';
 
 export type Action = PostActions.All;
 
