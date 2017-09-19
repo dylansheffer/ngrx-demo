@@ -8,6 +8,8 @@ import { AppComponent } from './components/app.component';
 import { StoreModule } from '@ngrx/store';
 import { requestReducer } from "./reducers/request.reducer";
 
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,6 +19,9 @@ import { requestReducer } from "./reducers/request.reducer";
     AppRoutingModule,
     StoreModule.forRoot({
       request: requestReducer
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 10
     }),
     FormsModule
   ],
