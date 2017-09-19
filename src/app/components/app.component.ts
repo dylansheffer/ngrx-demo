@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 
-import { Request } from "./models/request.model";
-import * as RequestActions from "./actions/request.actions";
+import { Request } from "../models/request.model";
+import * as RequestActions from "../actions/request.actions";
 
 interface AppState {
   request: Request;
