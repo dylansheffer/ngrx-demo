@@ -1,9 +1,9 @@
 import { Action } from "@ngrx/store";
 
-export const EDIT_TEXT = '[Post] Edit';
-export const UPVOTE = '[Post] Upvote';
-export const DOWNVOTE = '[Post] Downvote';
-export const RESET = '[Post] Reset';
+export const EDIT_TEXT = '[Request] Edit';
+export const UPVOTE = '[Request] Upvote';
+export const DOWNVOTE = '[Request] Downvote';
+export const RESET = '[Request] Reset';
 
 export class EditText implements Action {
     readonly type = EDIT_TEXT;

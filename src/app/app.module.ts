@@ -6,8 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store';
-import { simpleReducer } from './simple.reducer';
-import { postReducer } from "./reducers/post.reducer";
+import { requestReducer } from "./reducers/request.reducer";
 
 @NgModule({
   declarations: [
@@ -17,8 +16,7 @@ import { postReducer } from "./reducers/post.reducer";
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      post: postReducer,
-      message: simpleReducer
+      request: requestReducer
     }),
     FormsModule
   ],

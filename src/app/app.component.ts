@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 
-import { Post } from "./models/post.model";
-import * as PostActions from "./actions/post.actions";
+import { Request } from "./models/request.model";
+import * as RequestActions from "./actions/request.actions";
 
 interface AppState {
-  post: Post;
+  request: Request;
 }
 
 @Component({
@@ -16,27 +16,27 @@ interface AppState {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  post: Observable<Post>;
+  request: Observable<Request>;
   text: string;
 
   constructor(private store: Store<AppState>) {
-    this.post = this.store.select('post');
+    this.request = this.store.select('request');
   }
 
   // Dispatching updates the app state by instantiating new event objects
   editText() {
-    this.store.dispatch(new PostActions.EditText(this.text));
+    this.store.dispatch(new RequestActions.EditText(this.text));
   }
 
-  resetPost() {
-    this.store.dispatch(new PostActions.Reset());
+  resetRequest() {
+    this.store.dispatch(new RequestActions.Reset());
   }
 
   upvote() {
-    this.store.dispatch(new PostActions.Upvote());
+    this.store.dispatch(new RequestActions.Upvote());
   }
 
   downvote() {
-    this.store.dispatch(new PostActions.Downvote());
+    this.store.dispatch(new RequestActions.Downvote());
   }
 }
