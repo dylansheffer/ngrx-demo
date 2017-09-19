@@ -1,31 +1,29 @@
 import { Component } from '@angular/core';
-
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 
-import { Request } from "../models/request.model";
-import * as RequestActions from "../actions/request.actions";
+import { RequestComponent } from "./request.component"
+
+
 
 interface AppState {
-  request: Request;
 }
 
+@NgModule({
+  imports: [BrowserModule],
+  declarations: [Request],
+  bootstrap: [Request]
+})
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  request: Observable<Request>;
-  title: string;
-  author: string;
 
   constructor(private store: Store<AppState>) {
-    this.request = this.store.select('request');
-  }
-
-  // Dispatching updates the app state by instantiating new event objects
-  postRequest() {
-    this.store.dispatch(new RequestActions.PostRequest({title: this.title, author: this.author}));
   }
 }
+

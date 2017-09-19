@@ -1,14 +1,3 @@
-<div *ngIf="request | async as r; else loading;">
-    <h2>{{ r.title }}</h2>
-    <h3>{{ r.author }}</h3>
-
-    <label for="title">Title</label>
-    <input [(ngModel)]="title">
-
-    <label for="author">Author</label>
-    <input [(ngModel)]="author">
-
-    <button (click)="postRequest()">Post Request</button>
-</div>
+<request></request>
 
 <ng-template #loading>Loading Request Data...</ng-template>
