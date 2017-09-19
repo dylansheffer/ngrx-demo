@@ -17,26 +17,15 @@ interface AppState {
 })
 export class AppComponent {
   request: Observable<Request>;
-  text: string;
+  title: string;
+  author: string;
 
   constructor(private store: Store<AppState>) {
     this.request = this.store.select('request');
   }
 
   // Dispatching updates the app state by instantiating new event objects
-  editText() {
-    this.store.dispatch(new RequestActions.EditText(this.text));
-  }
-
-  resetRequest() {
-    this.store.dispatch(new RequestActions.Reset());
-  }
-
-  upvote() {
-    this.store.dispatch(new RequestActions.Upvote());
-  }
-
-  downvote() {
-    this.store.dispatch(new RequestActions.Downvote());
+  postRequest() {
+    this.store.dispatch(new RequestActions.PostRequest({title: this.title, author: this.author}));
   }
 }

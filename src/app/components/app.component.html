@@ -1,13 +1,14 @@
-<div *ngIf="request | async as p; else loading;">
-    <h2>{{ p.text }}</h2>
-    <h4>Votes: {{ p.likes }}</h4>
+<div *ngIf="request | async as r; else loading;">
+    <h2>{{ r.title }}</h2>
+    <h3>{{ r.author }}</h3>
 
-    <button (click)="upvote()">Upvote</button>
-    <button (click)="downvote()">Downvote</button>
-    <button (click)="resetRequest()">Reset</button>
+    <label for="title">Title</label>
+    <input [(ngModel)]="title">
 
-    <input [(ngModel)]="text">
-    <button (click)="editText()">Change Title</button>
+    <label for="author">Author</label>
+    <input [(ngModel)]="author">
 
+    <button (click)="postRequest()">Post Request</button>
 </div>
+
 <ng-template #loading>Loading Request Data...</ng-template>

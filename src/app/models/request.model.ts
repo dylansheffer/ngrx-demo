@@ -1,4 +1,4 @@
 export interface Request {
-    text: string;
-    likes: number;
+    title: string;
+    author: string;
 }

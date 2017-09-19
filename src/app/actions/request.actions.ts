@@ -1,32 +1,11 @@
 import { Action } from "@ngrx/store";
 
-export const EDIT_TEXT = '[Request] Edit';
-export const UPVOTE = '[Request] Upvote';
-export const DOWNVOTE = '[Request] Downvote';
-export const RESET = '[Request] Reset';
+export const POSTREQUEST = '[Request] PostRequest';
 
-export class EditText implements Action {
-    readonly type = EDIT_TEXT;
-    constructor(public payload: any = null) { }
-}
-
-export class Upvote implements Action {
-    readonly type = UPVOTE;
-    constructor(public payload: any = null) { }
-}
-
-export class Downvote implements Action {
-    readonly type = DOWNVOTE;
-    constructor(public payload: any = null) { }
-}
-
-export class Reset implements Action {
-    readonly type = RESET;
-    constructor(public payload: any = null) { }
+export class PostRequest implements Action {
+    readonly type = POSTREQUEST;
+    constructor(public payload: any = null) {}
 }
 
 export type All
-= Upvote
-| Downvote
-| Reset
-| EditText;
+= PostRequest;

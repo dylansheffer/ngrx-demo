@@ -5,8 +5,8 @@ export type Action = RequestActions.All;
 
 // Default App State
 const defaultState: Request = {
-    text: 'Hello. I am the default request',
-    likes: 0
+    title: 'ngrx Demo',
+    author: 'Dylan Sheffer'
 }
 
 // Helper function to create new state object
@@ -19,10 +19,8 @@ export function requestReducer(state: Request = defaultState, action: Action) {
     console.log(action.type, state);
 
     switch(action.type) {
-        case RequestActions.EDIT_TEXT:
-            return newState(state, { text: action.payload });
-        case RequestActions.RESET:
-            return defaultState;
+        case RequestActions.POSTREQUEST:
+            return newState(state, { title: action.payload.title, author: action.payload.author });
         default:
             return state;
     }
