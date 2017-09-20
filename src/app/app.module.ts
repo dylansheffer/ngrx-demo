@@ -8,11 +8,14 @@ import { AppComponent } from './components/app.component';
 import { StoreModule } from '@ngrx/store';
 import { requestReducer } from "./reducers/request.reducer";
 
+import { RequestComponent } from "./components/request.component"
+
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,
