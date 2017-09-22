@@ -4,6 +4,7 @@ import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 
 import { Request } from "../models/request.model";
+import { Queue } from "../models/queue.model";
 import * as RequestActions from "../actions/request.actions";
 
 interface AppState {
@@ -19,6 +20,7 @@ interface AppState {
     request: Observable<Request>;
     title: string;
     author: string;
+    queue: Queue;
 
     constructor(private store: Store<AppState>) {
       this.request = this.store.select('request');

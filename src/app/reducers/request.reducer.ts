@@ -6,7 +6,8 @@ export type Action = RequestActions.All;
 // Default App State
 const defaultState: Request = {
     title: 'ngrx Demo',
-    author: 'Dylan Sheffer'
+    author: 'Dylan Sheffer',
+    queue:
 }
 
 // Helper function to create new state object
