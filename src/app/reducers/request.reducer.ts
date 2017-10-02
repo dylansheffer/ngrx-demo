@@ -1,5 +1,6 @@
 import * as RequestActions from '../actions/request.actions';
 import { Request } from '../models/request.model';
+import * as Queues from '../models/queue.model';
 
 export type Action = RequestActions.All;
 
@@ -7,7 +8,7 @@ export type Action = RequestActions.All;
 const defaultState: Request = {
     title: 'ngrx Demo',
     author: 'Dylan Sheffer',
-    queue:
+    queue: new Queues.AwaitingRequestProcessing
 }
 
 // Helper function to create new state object
@@ -21,7 +22,7 @@ export function requestReducer(state: Request = defaultState, action: Action) {
 
     switch(action.type) {
         case RequestActions.POSTREQUEST:
-            return newState(state, { title: action.payload.title, author: action.payload.author });
+            return newState(state, { title: action.payload.title, author: action.payload.author, queue: action.payload.queue });
         default:
             return state;
     }
