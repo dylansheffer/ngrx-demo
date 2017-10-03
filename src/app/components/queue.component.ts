@@ -12,8 +12,12 @@ interface AppState {
 
 @Component({
     selector: 'queue',
-    templateUrl: './queue.component.html',
-    styleUrls: ['./queue.component.css']
+    template: `
+      <h1>Queues</h1>
+      <ul>
+          <li *ngFor="let request of queue.requests"></li>
+      </ul>
+    `
   })
   export class QueueComponent {
     queue: Observable<Queue>;

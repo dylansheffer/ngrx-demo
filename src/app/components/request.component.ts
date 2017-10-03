@@ -13,8 +13,20 @@ interface AppState {
 
 @Component({
     selector: 'request',
-    templateUrl: './request.component.html',
-    styleUrls: ['./request.component.css']
+    template:  `
+      <div *ngIf="request | async as r; else loading;">
+        <h2>{{ r.title }}</h2>
+        <h3>{{ r.author }}</h3>
+
+        <label for="title">Title</label>
+        <input [(ngModel)]="title">
+
+        <label for="author">Author</label>
+        <input [(ngModel)]="author">
+
+        <button (click)="postRequest()">Post Request</button>
+      </div>
+    `
   })
   export class RequestComponent {
     request: Observable<Request>;
